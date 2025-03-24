@@ -1,0 +1,14 @@
+node_modules/
+.project
+unpackage/cache
+unpackage/debug
+unpackage/dist
+unpackage/release
+unpackage/resources
+.DS_Store
+.hbuilderx/
+.idea/
+.eslintrc-auto-import.json
+/service
+/dist
+/types/*.d.ts
