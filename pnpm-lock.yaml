@@ -175,6 +175,9 @@ importers:
       '@vue/runtime-core':
         specifier: ^3.4.21
         version: 3.5.22
+      '@vue/runtime-dom':
+        specifier: ^3.5.22
+        version: 3.5.22
       '@vue/tsconfig':
         specifier: ^0.1.3
         version: 0.1.3(@types/node@20.19.23)

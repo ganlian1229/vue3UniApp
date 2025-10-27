@@ -29,3 +29,10 @@ interface ImportMeta {
 }
 
 declare const __VITE_APP_PROXY__: 'true' | 'false'
+
+// 或者更简单的方式 - 直接扩展所有属性
+declare module '@vue/runtime-dom' {
+  interface HTMLAttributes {
+    class?: string | string[]
+  }
+}
