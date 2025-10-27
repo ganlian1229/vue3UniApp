@@ -17,7 +17,7 @@ module.exports = {
     insertPragma: false, // 不需要自动在文件开头插入 @prettier
     proseWrap: 'preserve', // 使用默认的折行标准 always
     htmlWhitespaceSensitivity: 'css', // 根据显示样式决定 html 要不要折行
-    vueIndentScriptAndStyle: false, //（默认值）对于 .vue 文件，不缩进 <script> 和 <style> 里的内容
+    vueIndentScriptAndStyle: false, // （默认值）对于 .vue 文件，不缩进 <script> 和 <style> 里的内容
     endOfLine: 'auto', // 换行符使用 lf 在Linux和macOS以及git存储库内部通用\n
-    embeddedLanguageFormatting: 'auto' //（默认值）允许自动格式化内嵌的代码块
+    embeddedLanguageFormatting: 'auto' // （默认值）允许自动格式化内嵌的代码块
 };

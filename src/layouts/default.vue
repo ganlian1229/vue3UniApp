@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-const testUniLayoutExposedData = ref('testUniLayoutExposedData')
+const testUniLayoutExposedData = ref('testUniLayoutExposedData');
 defineExpose({
-  testUniLayoutExposedData,
-})
+    testUniLayoutExposedData
+});
 </script>
 
 <template>
-  <view class="layouts-default-page">
-    <slot />
-  </view>
+    <view class="layouts-default-page">
+        <slot />
+    </view>
 </template>

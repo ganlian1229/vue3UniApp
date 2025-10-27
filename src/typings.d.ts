@@ -8,4 +8,4 @@ declare global {}
 // 3. 使用方式见：https://github.com/unibest-tech/unibest/pull/241
 declare global {}
 
-export {} // 防止模块污染
+export {}; // 防止模块污染

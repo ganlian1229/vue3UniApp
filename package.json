@@ -76,7 +76,8 @@
         "prepare": "git init && husky && node ./scripts/create-base-files.js",
         "docker:prepare": "node ./scripts/create-base-files.js",
         "lint": "eslint",
-        "lint:fix": "eslint --fix"
+        "lint:fix": "eslint --fix",
+        "format": "npx prettier --write --ignore-path .prettierignore"
     },
     "dependencies": {
         "@dcloudio/uni-app": "3.0.0-4070620250821001",
@@ -172,9 +173,6 @@
     "lint-staged": {
         "**/*.{html,vue,ts,cjs,json,md}": [
             "prettier --write"
-        ],
-        "**/*.{vue,js,ts,jsx,tsx}": [
-            "eslint --cache --fix"
         ]
     }
 }
