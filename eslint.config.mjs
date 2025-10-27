@@ -37,6 +37,7 @@ export default uniHelper({
     'no-extend-native': 'off',
     'prettier/prettier': 'off',
     'eqeqeq': 'off',
+    'indent': ['warn', 4], // 使用四个空格进行缩进，
     'vue/singleline-html-element-content-newline': [
       'error',
       {
