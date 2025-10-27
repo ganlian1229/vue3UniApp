@@ -1,7 +1,7 @@
 {
   "globalStyle": {
     "navigationStyle": "default",
-    "navigationBarTitleText": "我的应用",
+    "navigationBarTitleText": "unibest",
     "navigationBarBackgroundColor": "#f8f8f8",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#FFFFFF"
@@ -29,10 +29,10 @@
         "text": "首页"
       },
       {
-        "iconPath": "static/tabbar/example.png",
-        "selectedIconPath": "static/tabbar/exampleHL.png",
-        "pagePath": "pages/about/about",
-        "text": "关于"
+        "iconPath": "static/tabbar/personal.png",
+        "selectedIconPath": "static/tabbar/personalHL.png",
+        "pagePath": "pages/me/me",
+        "text": "我的"
       }
     ]
   },
@@ -41,18 +41,38 @@
       "path": "pages/index/index",
       "type": "home",
       "style": {
+        "navigationStyle": "custom",
         "navigationBarTitleText": "首页"
-      },
-      "layout": "default"
+      }
     },
     {
-      "path": "pages/about/about",
+      "path": "pages/me/me",
       "type": "page",
       "style": {
-        "navigationStyle": "custom"
-      },
-      "layout": "default"
+        "navigationBarTitleText": "我的"
+      }
     }
   ],
-  "subPackages": []
+  "subPackages": [
+    {
+      "root": "pages-sub",
+      "pages": [
+        {
+          "path": "about/about",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "关于"
+          },
+          "layout": "default"
+        },
+        {
+          "path": "demo/index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "分包页面"
+          }
+        }
+      ]
+    }
+  ]
 }

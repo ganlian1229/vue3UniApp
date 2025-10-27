@@ -1,28 +1,94 @@
-<route lang="json5" type="page">
-{
-    style: { navigationBarTitleText: '首页' },
-    layout: 'default' // 布局方式
-}
-</route>
-<template>
-    <view :style="{ marginTop: safeAreaInsets?.top + 'px' }">
-        <view>
-            当前平台是：
-            <text>{{ PLATFORM.platform }}</text>
-        </view>
-    </view>
-</template>
-
 <script lang="ts" setup>
-import PLATFORM from '@/utils/platform';
-// 获取屏幕边界到安全区域距离
-const { safeAreaInsets } = uni.getSystemInfoSync();
-// 测试 uni API 自动引入
-onLoad(() => {});
+defineOptions({
+  name: 'Home',
+})
+definePage({
+  // 使用 type: "home" 属性设置首页，其他页面不需要设置，默认为page
+  type: 'home',
+  style: {
+    // 'custom' 表示开启自定义导航栏，默认 'default'
+    navigationStyle: 'custom',
+    navigationBarTitleText: '首页',
+  },
+})
+
+console.log('index/index 首页打印了')
+
+onLoad(() => {
+  console.log('测试 uni API 自动引入: onLoad')
+  /**
+   * @description:
+   * @return {*}
+   */
+})
+
+onShow(() => {
+  console.log('首页 onShow 打印了')
+})
+
+function gotoAbout() {
+  uni.navigateTo({
+    url: '/pages-sub/about/about',
+  })
+}
+
+function gotoDemo() {
+  uni.navigateTo({
+    url: '/pages-sub/demo/index',
+  })
+}
 </script>
 
-<style>
-.main-title-color {
-    color: #d14328;
-}
-</style>
+<template>
+  <view class="bg-white px-4 pt-2">
+    <wd-navbar fixed placeholder title="首页" left-arrow safe-area-inset-top>
+      <template #right>
+        <wd-icon name="search" size="18" />
+      </template>
+    </wd-navbar>
+    <view class="mt-4 text-center text-4xl text-[#d14328]">
+      unibest
+    </view>
+    <view class="mb-8 mt-2 text-center text-2xl">
+      最好用的 uniapp 开发模板
+    </view>
+    <!-- #ifdef H5 -->
+    <view class="mt-4 text-center">
+      <a href="https://unibest.tech/base/3-plugin" target="_blank" class="text-green-500">
+        新手请看必看章节1：
+      </a>
+    </view>
+    <!-- #endif -->
+    <!-- #ifdef MP-WEIXIN -->
+    <view class="mt-4 text-center">
+      新手请看必看章节1：
+      <text class="text-green-500"> https://unibest.tech/base/3-plugin </text>
+    </view>
+    <!-- #endif -->
+    <!-- #ifdef H5 -->
+    <view class="mt-4 text-center">
+      <a href="https://unibest.tech/base/14-faq" target="_blank" class="text-green-500">
+        新手请看必看章节2：
+      </a>
+    </view>
+    <!-- #endif -->
+    <!-- #ifdef MP-WEIXIN -->
+    <view class="mt-4 text-center">
+      新手请看必看章节2：
+      <text class="text-green-500"> https://unibest.tech/base/14-faq </text>
+    </view>
+    <!-- #endif -->
+    <view class="mt-4 text-center">
+      UI组件官网：<text class="text-green-500"> https://wot-design-uni.cn </text>
+    </view>
+    <view class="mt-4 text-center">
+      <wd-button type="primary" class="ml-2" @click="gotoAbout">
+        前往示例页
+      </wd-button>
+      <wd-button type="primary" class="ml-2" @click="gotoDemo">
+        前往Dome页
+      </wd-button>
+    </view>
+    <view class="h-6" />
+  </view>
+</template>
