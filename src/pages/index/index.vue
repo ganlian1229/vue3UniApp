@@ -41,11 +41,11 @@ function gotoDemo() {
 
 <template>
     <view class="bg-white px-4 pt-2">
-        <wd-navbar fixed placeholder title="首页" left-arrow safe-area-inset-top>
+        <u-navbar fixed placeholder title="首页" left-arrow safe-area-inset-top>
             <template #right>
-                <wd-icon name="search" size="18" />
+                <u-icon name="search" size="18" />
             </template>
-        </wd-navbar>
+        </u-navbar>
         <view class="mt-4 text-center text-4xl text-[#d14328]"> unibest </view>
         <view class="mb-8 mt-2 text-center text-2xl"> 最好用的 uniapp 开发模板 </view>
         <!-- #ifdef H5 -->
@@ -78,8 +78,8 @@ function gotoDemo() {
             UI组件官网：<text class="text-green-500"> https://wot-design-uni.cn </text>
         </view>
         <view class="mt-4 text-center">
-            <wd-button type="primary" class="ml-2" @click="gotoAbout"> 前往示例页 </wd-button>
-            <wd-button type="primary" class="ml-2" @click="gotoDemo"> 前往Dome页 </wd-button>
+            <u-button type="primary" class="ml-2" @click="gotoAbout"> 前往示例页 </u-button>
+            <u-button type="primary" class="ml-2" @click="gotoDemo"> 前往Dome页 </u-button>
         </view>
         <view class="h-6" />
     </view>

@@ -14,10 +14,8 @@ defineExpose({
 </script>
 
 <template>
-    <wd-config-provider class="ku-root">
+    <u-config-provider class="ku-root">
         <KuRootView />
-
-        <wd-toast />
-        <wd-message-box />
-    </wd-config-provider>
+        <u-toast />
+    </u-config-provider>
 </template>

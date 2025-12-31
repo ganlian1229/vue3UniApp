@@ -101,8 +101,8 @@
         "js-cookie": "^3.0.5",
         "pinia": "2.0.36",
         "pinia-plugin-persistedstate": "3.2.1",
+        "uview-pro": "^0.4.11",
         "vue": "^3.4.21",
-        "wot-design-uni": "^1.12.4",
         "z-paging": "2.8.7"
     },
     "devDependencies": {
