@@ -11,7 +11,9 @@ export default defineUniPages({
     easycom: {
         autoscan: true,
         custom: {
-            '^u-(.*)': 'uview-pro/components/u-$1/u-$1.vue'
+            '^u--(.*)': 'uview-plus/components/u-$1/u-$1.vue',
+            '^up-(.*)': 'uview-plus/components/u-$1/u-$1.vue',
+            '^u-([^-].*)': 'uview-plus/components/u-$1/u-$1.vue'
         }
     },
     tabBar: {

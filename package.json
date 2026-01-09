@@ -97,13 +97,12 @@
         "@dcloudio/uni-mp-xhs": "3.0.0-4070620250821001",
         "@dcloudio/uni-quickapp-webview": "3.0.0-4070620250821001",
         "abortcontroller-polyfill": "^1.7.8",
+        "clipboard": "^2.0.11",
         "dayjs": "1.11.10",
-        "js-cookie": "^3.0.5",
         "pinia": "2.0.36",
         "pinia-plugin-persistedstate": "3.2.1",
-        "uview-pro": "^0.4.11",
-        "vue": "^3.4.21",
-        "z-paging": "2.8.7"
+        "uview-plus": "^3.6.29",
+        "vue": "^3.4.21"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",
@@ -150,7 +149,8 @@
         "postcss-scss": "^4.0.9",
         "prettier-plugin-vue": "^1.1.6",
         "rollup-plugin-visualizer": "^6.0.3",
-        "sass": "1.77.8",
+        "sass": "1.63.2",
+        "sass-loader": "10.4.1",
         "std-env": "^3.9.0",
         "typescript": "~5.8.0",
         "unplugin-auto-import": "^20.0.0",

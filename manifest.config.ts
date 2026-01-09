@@ -150,7 +150,10 @@ export default defineManifestConfig({
         usingComponents: true
     },
     'mp-toutiao': {
-        usingComponents: true
+        usingComponents: true,
+        // 是否合并组件虚拟节点外层属性，uni-app 3.5.1+ 开始支持。目前仅支持 style、class 属性。
+        // 默认不开启（undefined），这里设置为开启。
+        mergeVirtualHostAttributes: true
     },
     uniStatistics: {
         enable: false

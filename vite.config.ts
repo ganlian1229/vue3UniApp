@@ -26,6 +26,7 @@ import ViteRestart from 'vite-plugin-restart';
 import openDevTools from './scripts/open-dev-tools';
 import { createCopyNativeResourcesPlugin } from './vite-plugins/copy-native-resources';
 import syncManifestPlugin from './vite-plugins/sync-manifest-plugins';
+import vitePluginApiTypes from './vite-plugins/vite-plugin-api-types.ts';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -98,6 +99,12 @@ export default defineConfig(({ command, mode }) => {
                     }
                 }
             },
+            vitePluginApiTypes({
+                apiDir: 'src/api',
+                typesDir: 'src/types',
+                typesFileName: 'api-types.d.ts',
+                verbose: true
+            }),
             AutoImport({
                 imports: ['vue', 'uni-app'],
                 dts: 'src/types/auto-import.d.ts',
@@ -150,6 +157,14 @@ export default defineConfig(({ command, mode }) => {
             __VITE_APP_PROXY__: JSON.stringify(VITE_APP_PROXY_ENABLE)
         },
         css: {
+            preprocessorOptions: {
+                scss: {
+                    // 取消sass废弃API的报警
+                    silenceDeprecations: ['legacy-js-api', 'color-functions', 'import'],
+                    // 允许从 node_modules 导入 scss 文件
+                    includePaths: [path.join(process.cwd(), 'node_modules')]
+                }
+            },
             postcss: {
                 plugins: [
                     // autoprefixer({
