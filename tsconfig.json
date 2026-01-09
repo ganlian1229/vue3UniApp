@@ -12,6 +12,7 @@
         "resolveJsonModule": true,
         "types": [
             "@dcloudio/types",
+            "vue",
             "@uni-helper/uni-types",
             "@uni-helper/vite-plugin-uni-pages",
             "miniprogram-api-typings",

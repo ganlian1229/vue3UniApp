@@ -8,6 +8,7 @@ definePage({
         navigationBarTitleText: '首页'
     }
 });
+import test from '@/components/test.vue';
 
 console.log('index/index 首页打印了');
 
@@ -43,6 +44,7 @@ function gotoDemo() {
             <u-button type="primary" class="ml-2" @click="gotoAbout"> 前往示例页 </u-button>
             <u-button class="ml-2" @click="gotoDemo"> 前往Dome页 </u-button>
         </view>
+        <test />
         <view class="h-6" />
     </view>
 </template>
