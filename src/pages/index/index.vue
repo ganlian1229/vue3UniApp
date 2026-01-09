@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-defineOptions({
-    name: 'Home'
-});
 definePage({
     // 使用 type: "home" 属性设置首页，其他页面不需要设置，默认为page
     type: 'home',
@@ -24,13 +21,13 @@ onShow(() => {
 
 function gotoAbout() {
     uni.navigateTo({
-        url: '/pages-sub/about/about'
+        url: '/pages-sub/other/about/about'
     });
 }
 
 function gotoDemo() {
     uni.navigateTo({
-        url: '/pages-sub/demo/index'
+        url: '/pages-sub/other/demo/demo'
     });
 }
 </script>

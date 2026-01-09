@@ -39,5 +39,26 @@ export default defineUniPages({
                 text: '我的'
             }
         ]
-    }
+    },
+    pages: [
+        {
+            path: 'pages/index/index'
+        },
+        {
+            path: 'pages/me/me'
+        }
+    ],
+    subPackages: [
+        {
+            root: 'pages-sub/other',
+            page: [
+                {
+                    path: 'about/about'
+                },
+                {
+                    path: 'demo/demo'
+                }
+            ]
+        }
+    ]
 });
