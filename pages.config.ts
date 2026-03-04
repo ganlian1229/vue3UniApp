@@ -47,18 +47,5 @@ export default defineUniPages({
         {
             path: 'pages/me/me'
         }
-    ],
-    subPackages: [
-        {
-            root: 'pages-sub/other',
-            page: [
-                {
-                    path: 'about/about'
-                },
-                {
-                    path: 'demo/demo'
-                }
-            ]
-        }
     ]
 });

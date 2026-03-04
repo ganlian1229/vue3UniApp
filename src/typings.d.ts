@@ -1,6 +1,11 @@
 // 全局要用的类型放到这里
 
-declare global {}
+declare global {
+    var plus: any;
+    interface Window {
+        plus: any;
+    }
+}
 
 // patch uni 类型
 // 1. 补全 uni.hideToast() 的 options 类型

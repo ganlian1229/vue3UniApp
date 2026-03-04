@@ -25,6 +25,7 @@ import { defineConfig, loadEnv } from 'vite';
 import ViteRestart from 'vite-plugin-restart';
 import openDevTools from './scripts/open-dev-tools';
 import { createCopyNativeResourcesPlugin } from './vite-plugins/copy-native-resources';
+import { createCopyUnpackageToDistPlugin } from './vite-plugins/copy-unpackage-to-dist';
 import syncManifestPlugin from './vite-plugins/sync-manifest-plugins';
 import vitePluginApiTypes from './vite-plugins/vite-plugin-api-types.ts';
 
@@ -106,7 +107,14 @@ export default defineConfig(({ command, mode }) => {
                 verbose: true
             }),
             AutoImport({
-                imports: ['vue', 'uni-app'],
+                imports: [
+                    'vue',
+                    'uni-app',
+                    {
+                        // 全局注入 import $api from '@/api';
+                        '@/api': [['default', '$api']]
+                    }
+                ],
                 dts: 'src/types/auto-import.d.ts',
                 dirs: [], // 自动导入 hooks
                 vueTemplate: true // default false
@@ -135,12 +143,17 @@ export default defineConfig(({ command, mode }) => {
                 }),
             // 原生插件资源复制插件 - 仅在 app 平台且启用时生效
             createCopyNativeResourcesPlugin(
-                UNI_PLATFORM === 'app' && VITE_COPY_NATIVE_RES_ENABLE === 'true',
+                ['app'].includes(UNI_PLATFORM || '') && VITE_COPY_NATIVE_RES_ENABLE === 'true',
                 {
                     verbose: mode === 'development' // 开发模式显示详细日志
                 }
             ),
+            // 将 src/unpackage 原样复制到 dist/dev/app（或 dist/build/app）
+            createCopyUnpackageToDistPlugin(['app'].includes(UNI_PLATFORM || ''), {
+                verbose: mode === 'development'
+            }),
             syncManifestPlugin(),
+            // 自动全局组件
             Components({
                 extensions: ['vue'],
                 deep: true, // 是否递归扫描子目录，

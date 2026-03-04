@@ -174,5 +174,9 @@
         "**/*.{html,vue,ts,cjs,json,md}": [
             "prettier --write"
         ]
+    },
+    "volta": {
+        "node": "20.20.0",
+        "pnpm": "10.10.0"
     }
 }

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { onHide, onLaunch, onShow } from '@dcloudio/uni-app';
-
 onLaunch((options) => {
     console.log('App Launch', options);
 });
